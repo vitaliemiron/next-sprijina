@@ -1,6 +1,6 @@
 overwrite: true
 schema:
-  - https://api.spacex.land/graphql:
+  - http://sprijina-site.com/graphql:
 
 documents: './graphql/**/*.graphql'
 generates:

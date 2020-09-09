@@ -8,7 +8,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import { theme } from '@Utils';
 
 const client = new ApolloClient({
-  uri: 'https://api.spacex.land/graphql',
+  uri: process.env.NEXT_PUBLIC_API_URL,
   cache: new InMemoryCache()
 });
 

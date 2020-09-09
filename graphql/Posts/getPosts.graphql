@@ -1,0 +1,8 @@
+query Posts($id: ID!) {
+  posts {
+    nodes {
+      title
+      uri
+    }
+  }
+}

@@ -38,7 +38,7 @@ const theme = createMuiTheme({
     gray: {
       darken20: '#5B5F6B',
       darken10: '#979797',
-      base: '#788095',
+      base: '#5d5d5d',
       lighten30: '#969dae',
       lighten20: '#b5bcc8',
       lighten15: '#dfe1e6',
@@ -49,6 +49,9 @@ const theme = createMuiTheme({
       lighten100: '#fff',
       lighten40: '#535867',
       lighten30: '#3a3c41'
+    },
+    white: {
+      base: '#fff'
     },
     peach: {
       base: '#f6af97',
@@ -105,7 +108,7 @@ const theme = createMuiTheme({
   typography: {
     htmlFontSize: 10,
     htmlSize: '62.5%',
-    fontFamily: 'Raleway, sans-serif',
+    fontFamily: 'Poppins, sans-serif',
     fontSize: 14,
     fontWeightRegular: 400,
     fontWeightBold: 700,

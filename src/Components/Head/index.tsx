@@ -5,13 +5,14 @@ import { useSiteSettingsQuery } from '@Generated';
 export const MainHead = () => {
   const { data } = useSiteSettingsQuery();
   const title = data?.allSettings?.generalSettingsTitle ?? 'Sprijina.md';
+
   return (
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta
         name="description"
-        content="The Newborn Screening Translational Research Network"
+        content="Sprijina.md – platformă de crowdfunding din Republica Moldova pentru proiecte comunitare, nevoi personale, urgențe medicale și caritate."
       />
       <meta name="author" content="" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,7 +24,7 @@ export const MainHead = () => {
       <meta property="og:title" content={title} />
       <meta
         property="og:description"
-        content="The Newborn Screening Translational Research Network"
+        content="Sprijina.md – platformă de crowdfunding din Republica Moldova pentru proiecte comunitare, nevoi personale, urgențe medicale și caritate."
       />
       <meta property="og:image" content="/logo.svg" />
       <link

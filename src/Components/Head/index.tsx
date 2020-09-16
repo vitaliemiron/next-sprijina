@@ -1,11 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
+import { useSiteSettingsQuery } from '@Generated';
 
 export const MainHead = () => {
-  const title = 'Insomniac';
+  const { data } = useSiteSettingsQuery();
+  const title = data?.allSettings?.generalSettingsTitle ?? 'Sprijina.md';
   return (
     <Head>
-      <title>Insomniac boilerplate</title>
+      <title>{title}</title>
       <meta charSet="utf-8" />
       <meta
         name="description"

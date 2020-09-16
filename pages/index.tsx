@@ -1,6 +1,28 @@
 import React from 'react';
-import { MainLayout } from '@Components';
+import { GetStaticProps } from 'next';
+import { useSiteSettingsQuery, SiteSettingsDocument } from '@Generated';
+// import { MainLayout } from '@Components';
 
-export default function Home() {
-  return <div>test</div>;
-}
+import { initializeApollo } from '@lib/Apollo';
+
+const Home = (): JSX.Element => {
+  const { data } = useSiteSettingsQuery();
+  return <div>{data?.allSettings?.generalSettingsTitle}</div>;
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: SiteSettingsDocument
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract()
+    },
+    revalidate: 1
+  };
+};
+
+export default Home;

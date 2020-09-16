@@ -1,0 +1,5 @@
+query siteSettings {
+  allSettings {
+    generalSettingsTitle
+  }
+}

@@ -10,7 +10,8 @@
           "@Utils": "./src/Utils",
           "@Pages": "./pages",
           "@Public": "./public",
-          "@Generated": "./generated"
+          "@Generated": "./generated",
+          "@lib": "./src/lib"
         }
       }
     ],

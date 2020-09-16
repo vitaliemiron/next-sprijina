@@ -3,16 +3,14 @@ import * as React from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 
 import { theme } from '@Utils';
-
-const client = new ApolloClient({
-  uri: process.env.NEXT_PUBLIC_API_URL,
-  cache: new InMemoryCache()
-});
+import { useApollo } from '@lib/Apollo';
 
 function WebApp({ Component, pageProps }: AppProps): JSX.Element {
+  const apolloClient = useApollo(pageProps.initialApolloState);
+
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -23,7 +21,7 @@ function WebApp({ Component, pageProps }: AppProps): JSX.Element {
   }, []);
 
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient}>
       <ThemeProvider theme={theme}>
         <MuiThemeProvider theme={theme}>
           <Component {...pageProps} />

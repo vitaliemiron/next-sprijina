@@ -20,7 +20,8 @@
       "@Utils/*": ["src/Utils/*"],
       "@Utils": ["src/Utils"],
       "@Pages/*": ["pages/*"],
-      "@Generated": ["generated"]
+      "@Generated": ["generated"],
+      "@lib/*": ["src/lib/*"]
     }
   },
   "exclude": [

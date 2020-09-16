@@ -10354,12 +10354,49 @@ export type ContentTemplate = {
   templateName: Maybe<Scalars['String']>;
 };
 
+export type SiteSettingsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SiteSettingsQuery = { __typename?: 'RootQuery', allSettings: Maybe<{ __typename?: 'Settings', generalSettingsTitle: Maybe<string> }> };
+
 export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type PostsQuery = { __typename?: 'RootQuery', posts: Maybe<{ __typename?: 'RootQueryToPostConnection', nodes: Maybe<Array<Maybe<{ __typename?: 'Post', title: Maybe<string>, uri: string }>>> }> };
 
 
+export const SiteSettingsDocument = gql`
+    query siteSettings {
+  allSettings {
+    generalSettingsTitle
+  }
+}
+    `;
+
+/**
+ * __useSiteSettingsQuery__
+ *
+ * To run a query within a React component, call `useSiteSettingsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSiteSettingsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSiteSettingsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSiteSettingsQuery(baseOptions?: Apollo.QueryHookOptions<SiteSettingsQuery, SiteSettingsQueryVariables>) {
+        return Apollo.useQuery<SiteSettingsQuery, SiteSettingsQueryVariables>(SiteSettingsDocument, baseOptions);
+      }
+export function useSiteSettingsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SiteSettingsQuery, SiteSettingsQueryVariables>) {
+          return Apollo.useLazyQuery<SiteSettingsQuery, SiteSettingsQueryVariables>(SiteSettingsDocument, baseOptions);
+        }
+export type SiteSettingsQueryHookResult = ReturnType<typeof useSiteSettingsQuery>;
+export type SiteSettingsLazyQueryHookResult = ReturnType<typeof useSiteSettingsLazyQuery>;
+export type SiteSettingsQueryResult = Apollo.QueryResult<SiteSettingsQuery, SiteSettingsQueryVariables>;
 export const PostsDocument = gql`
     query Posts {
   posts {

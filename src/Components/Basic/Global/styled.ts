@@ -74,7 +74,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-      background-color: ${theme.colors.blue.lighten60};
       color: ${theme.colors.black.base};
       font-family: ${theme.typography.fontFamily};
       font-weight: ${theme.typography.fontWeightRegular};
@@ -91,7 +90,6 @@ export const GlobalStyles = createGlobalStyle`
       max-width: ${theme.typography.headings.h1.secondary.maxWidth}rem;
       letter-spacing: ${theme.typography.headings.h1.secondary.letterSpacing}rem;
       font-weight: ${theme.typography.fontWeightBold};
-      color: ${theme.colors.blue.base};
 
       [theme.breakpoints.down('sm')]: {
         font-size:  ${theme.typography.headings.h1.secondary.sm.fontSize}rem;
@@ -112,7 +110,6 @@ export const GlobalStyles = createGlobalStyle`
       padding: 1.95rem 0;
       font-size: 2rem;
       font-weight: ${theme.typography.fontWeightBold};
-      color: ${theme.colors.black.base};
     }
 
     h3, .h3 {
@@ -120,7 +117,6 @@ export const GlobalStyles = createGlobalStyle`
       font-weight: ${theme.typography.fontWeightBold};
       line-height: 2.6rem;
       padding: 1.3rem 0;
-      color: ${theme.colors.black.base};
     }
 
     p {
@@ -130,7 +126,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     a, span.link {
-      color: ${theme.colors.blue.base};
       font-weight: ${theme.typography.fontWeightBold};
       text-decoration: none;
 

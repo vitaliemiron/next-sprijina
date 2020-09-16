@@ -16,9 +16,9 @@ const theme = createMuiTheme({
     values: { ...breakPointsSettings }
   },
   colors: {
-    blue: {
+    yellow: {
       darken10: '#11649E',
-      base: '#0066a2',
+      base: '#fed854',
       lighten90: '#f2f7fa',
       lighten70: '#f7fafb',
       lighten60: '#f3f7fa',
@@ -81,9 +81,6 @@ const theme = createMuiTheme({
       lighten80: '#f4f4f8',
       lighten70: '#e3e3ed',
       lighten30: '#7474a5'
-    },
-    yellow: {
-      base: '#d2af19'
     },
     red: {
       base: '#d22019',

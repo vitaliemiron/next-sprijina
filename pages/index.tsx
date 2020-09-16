@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import { useSiteSettingsQuery, SiteSettingsDocument } from '@Generated';
-import { MainLayout } from '@Components';
+import { MainLayout } from '@Components/Layout';
 
 import { initializeApollo } from '@lib/Apollo';
 

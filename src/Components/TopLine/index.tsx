@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container } from '@Components';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import { Container } from '../Container';
 
 import * as S from './styled';
 

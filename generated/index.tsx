@@ -4177,22 +4177,18 @@ export type ContentNodeToEnqueuedStylesheetConnectionEdge = {
 
 /** The size of the media item object. */
 export enum MediaItemSizeEnum {
-  /** MediaItem with the large size */
-  Large = 'LARGE',
-  /** MediaItem with the medium size */
-  Medium = 'MEDIUM',
-  /** MediaItem with the medium_large size */
-  MediumLarge = 'MEDIUM_LARGE',
-  /** MediaItem with the post-thumbnail size */
-  PostThumbnail = 'POST_THUMBNAIL',
-  /** MediaItem with the thumbnail size */
-  Thumbnail = 'THUMBNAIL',
-  /** MediaItem with the twentytwenty-fullscreen size */
-  TwentytwentyFullscreen = 'TWENTYTWENTY_FULLSCREEN',
   /** MediaItem with the 1536x1536 size */
-  1536X1536 = '_1536X1536',
+  Size_1536X1536 = 'SIZE_1536X1536',
   /** MediaItem with the 2048x2048 size */
-  2048X2048 = '_2048X2048'
+  Size_2048X2048 = 'SIZE_2048X2048',
+  /** MediaItem with the large size */
+  SizeLarge = 'SIZE_LARGE',
+  /** MediaItem with the medium size */
+  SizeMedium = 'SIZE_MEDIUM',
+  /** MediaItem with the medium_large size */
+  SizeMediumLarge = 'SIZE_MEDIUM_LARGE',
+  /** MediaItem with the thumbnail size */
+  SizeThumbnail = 'SIZE_THUMBNAIL'
 }
 
 /** Connection between the ContentNode type and the User type */
@@ -4299,14 +4295,6 @@ export type MediaSize = {
    * @deprecated 
    */
   width: Maybe<Scalars['String']>;
-};
-
-/** The template assigned to a node of content */
-export type ContentTemplate = {
-  /** The file the template uses */
-  templateFile: Maybe<Scalars['String']>;
-  /** The name of the template */
-  templateName: Maybe<Scalars['String']>;
 };
 
 /** Arguments for filtering the ContentNodeToTermNodeConnection connection */
@@ -6675,11 +6663,7 @@ export type MenuMenuItemsArgs = {
 
 /** Registered menu locations */
 export enum MenuLocationEnum {
-  Expanded = 'EXPANDED',
-  Footer = 'FOOTER',
-  Mobile = 'MOBILE',
-  Primary = 'PRIMARY',
-  Social = 'SOCIAL'
+  Empty = 'EMPTY'
 }
 
 /** Arguments for filtering the MenuToMenuItemConnection connection */
@@ -10362,61 +10346,22 @@ export type PostObjectUnion = Post | Page | MediaItem;
 
 export type TermObjectUnion = Category | Tag | PostFormat;
 
-/** The template assigned to the node */
-export type DefaultTemplate = ContentTemplate & {
-  __typename?: 'DefaultTemplate';
-  /**
-   * The file the template uses
-   * @deprecated 
-   */
+/** The template assigned to a node of content */
+export type ContentTemplate = {
+  /** The file the template uses */
   templateFile: Maybe<Scalars['String']>;
-  /**
-   * The name of the template
-   * @deprecated 
-   */
+  /** The name of the template */
   templateName: Maybe<Scalars['String']>;
 };
 
-/** The template assigned to the node */
-export type CoverTemplateTemplate = ContentTemplate & {
-  __typename?: 'CoverTemplateTemplate';
-  /**
-   * The file the template uses
-   * @deprecated 
-   */
-  templateFile: Maybe<Scalars['String']>;
-  /**
-   * The name of the template
-   * @deprecated 
-   */
-  templateName: Maybe<Scalars['String']>;
-};
-
-/** The template assigned to the node */
-export type FullWidthTemplateTemplate = ContentTemplate & {
-  __typename?: 'FullWidthTemplateTemplate';
-  /**
-   * The file the template uses
-   * @deprecated 
-   */
-  templateFile: Maybe<Scalars['String']>;
-  /**
-   * The name of the template
-   * @deprecated 
-   */
-  templateName: Maybe<Scalars['String']>;
-};
-
-export type PostsQueryVariables = Exact<{
-  id: Scalars['ID'];
-}>;
+export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type PostsQuery = { __typename?: 'RootQuery', posts: Maybe<{ __typename?: 'RootQueryToPostConnection', nodes: Maybe<Array<Maybe<{ __typename?: 'Post', title: Maybe<string>, uri: string }>>> }> };
 
 
 export const PostsDocument = gql`
-    query Posts($id: ID!) {
+    query Posts {
   posts {
     nodes {
       title
@@ -10438,7 +10383,6 @@ export const PostsDocument = gql`
  * @example
  * const { data, loading, error } = usePostsQuery({
  *   variables: {
- *      id: // value for 'id'
  *   },
  * });
  */

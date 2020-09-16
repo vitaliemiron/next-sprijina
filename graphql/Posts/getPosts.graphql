@@ -1,4 +1,4 @@
-query Posts($id: ID!) {
+query Posts {
   posts {
     nodes {
       title
